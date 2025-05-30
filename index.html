@@ -8,74 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- <script>
-        function sendData() {
-            // Get values from input fields
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const message = document.getElementById("message").value;
-
-            // Prepare request data
-            const requestData = {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            };
-
-            // API endpoint (Replace with actual API URL)
-            const apiUrl = "https://p7hjkeqa74.execute-api.eu-north-1.amazonaws.com/prod/contactform";
-
-            // Fetch API with POST request
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(requestData)  // Convert object to JSON
-            })
-                .then(response => response.json())  // Convert response to JSON
-                .then(data => {
-                    document.getElementById("response").innerText = JSON.stringify(data, null, 2);
-                })
-                .catch(error => console.error("Error:", error));
-        }
-    </script>
-     <script>
-        function sendData1() {
-            // Get values from input fields
-            const name = document.getElementById("name1").value;
-            const email = document.getElementById("email1").value;
-            const phone = document.getElementById("phone1").value;
-            const message = document.getElementById("message1").value;
-
-            // Prepare request data
-            const requestData = {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            };
-
-            // API endpoint (Replace with actual API URL)
-            const apiUrl = "https://p7hjkeqa74.execute-api.eu-north-1.amazonaws.com/prod/contactform";
-
-            // Fetch API with POST request
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(requestData)  // Convert object to JSON
-            })
-                .then(response => response.json())  // Convert response to JSON
-                .then(data => {
-                    document.getElementById("response").innerText = JSON.stringify(data, null, 2);
-                })
-                .catch(error => console.error("Error:", error));
-        }
-    </script> -->
     <header>
         <div class="logo">
             <img src="img/logo.png" alt="24 WALLSTREET">
@@ -105,69 +37,34 @@
         <!-- Hero content would go here -->
     </div>
 
-    <!-- Popup Form -->
-    <!-- <div class="popup-overlay" id="popup-form">
+ <div class="popup-overlay" id="popup-form">
         <div class="popup-container">
             <button class="close-btn" id="close-popup">✕</button>
             <h2>Register here and Avail the Best Offers!!!</h2>
             
-            <form id="enquiry-form">
+            <!-- FIXED: Corrected email address -->
+            <form id="enquiry-form" action="https://formsubmit.co/poojasarade01@gmail.com" method="POST">
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name*" required>
-                </div>
-                
-                <div class="form-group">
-                    <input type="tel" id="phone" placeholder="Mobile Number*" required>
-                </div>
-                
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email*" required>
+                    <input type="text" name="name" id="name" placeholder="Your Name*" required>
                 </div>
                 <div class="form-group">
-                    <input type="msg" id="message" placeholder="Your Message*" required>
+                    <input type="tel" name="phone" id="phone" placeholder="Mobile Number*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Your Email*" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="message" id="message" placeholder="Your Message*" required>
                 </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="not-robot" required>
                     <label for="not-robot">I'm not a robot</label>
                 </div>
-                <button  onclick="sendData()" class="submit-btn">Enquire Now</button>
+           <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Website Contact Form">
+                <button type="submit" class="submit-btn">Enquire Now</button>
             </form>
         </div>
-    </div> -->
-    <div class="popup-overlay" id="popup-form">
-    <div class="popup-container">
-        <button class="close-btn" id="close-popup">✕</button>
-        <h2>Register here and Avail the Best Offers!!!</h2>
-
-        <form id="enquiry-form" action="https://formsubmit.co/poojasarade01@gmail.com" method="POST">
-            <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="Your Name*" required>
-            </div>
-
-            <div class="form-group">
-                <input type="tel" name="phone" id="phone" placeholder="Mobile Number*" required>
-            </div>
-
-            <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="Your Email*" required>
-            </div>
-
-            <div class="form-group">
-                <input type="text" name="message" id="message" placeholder="Your Message*" required>
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="not-robot" required>
-                <label for="not-robot">I'm not a robot</label>
-            </div>
-
-            <!-- Optional hidden fields -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" value="Thanks for your enquiry! We'll contact you soon.">
-<button onclick="sendData(event)" type="submit" class="submit-btn">Enquire Now</button>
-           
-        </form>
     </div>
 </div>
 
@@ -788,19 +685,7 @@
     </div>
 </div>
 <!-- /******************************************************************************************/ -->
-<!-- <div class="contact-section">
-    <div class="stars">★ ★ ★ ★ ★</div>
-    <p class="contact-text">TO OBTAIN INFORMATION ON COSTING, PRICE BREAKDOWN, SITE PLAN, FLOOR PLAN, AND OTHER DETAILS, PLEASE CONTACT US FOR COMPREHENSIVE ASSISTANCE.</p>
-    <a href="#" class="download-link">Download Brochure</a>
-    
-    <form class="contact-form">
-        <input type="text" class="form-input" id="name1" placeholder="Your Name*" required>
-        <input type="tel" class="form-input" id="phone1" placeholder="Mobile Number*" required>
-        <input type="email" class="form-input" id="email1" placeholder="Your Email*" required>
-        <input type="msg" class="form-input" id="message1" placeholder="Your Message*" required>
-        <button  onclick="sendData1()" type="submit" class="submit-btn">Enquire Now</button>
-    </form>
-</div> -->
+
 <div class="contact-section">
     <div class="stars">★ ★ ★ ★ ★</div>
     <p class="contact-text">
@@ -808,90 +693,21 @@
         PLEASE CONTACT US FOR COMPREHENSIVE ASSISTANCE.
     </p>
     <a href="#" class="download-link">Download Brochure</a>
-
-    <form class="contact-form" id="form1">
-        <input type="text" class="form-input" id="name1" placeholder="Your Name*" required>
-        <input type="tel" class="form-input" id="phone1" placeholder="Mobile Number*" required>
-        <input type="email" class="form-input" id="email1" placeholder="Your Email*" required>
-        <input type="text" class="form-input" id="message1" placeholder="Your Message*" required>
-        <button onclick="sendData1(event)" type="submit" class="submit-btn">Enquire Now</button>
+    
+    <!-- FIXED: Added name attributes -->
+    <form class="contact-form" id="form1" action="https://formsubmit.co/poojasarade01@gmail.com" method="POST">
+        <input type="text" class="form-input" name="name" id="name1" placeholder="Your Name*" required>
+        <input type="tel" class="form-input" name="phone" id="phone1" placeholder="Mobile Number*" required>
+        <input type="email" class="form-input" name="email" id="email1" placeholder="Your Email*" required>
+        <input type="text" class="form-input" name="message" id="message1" placeholder="Your Message*" required>
+        
+        <!-- Add these hidden fields for better experience -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Website Contact Form">
+        
+        <button type="submit" class="submit-btn">Enquire Now</button>
     </form>
-</div>
-
-<script>
-    function sendData1(event) {
-        event.preventDefault(); // Stop the form from submitting normally
-
-        // Collect form data
-        const name = document.getElementById('name1').value;
-        const phone = document.getElementById('phone1').value;
-        const email = document.getElementById('email1').value;
-        const message = document.getElementById('message1').value;
-
-        // Send the data using FormSubmit (or another email service)
-        fetch("https://formsubmit.co/poojasarade01@gmail.com", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                phone: phone,
-                email: email,
-                message: message
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("Thank you! Your details have been sent.");
-                document.getElementById('form1').reset();
-            } else {
-                alert("Something went wrong. Please try again later.");
-            }
-        })
-        .catch(error => {
-            alert("Error: " + error.message);
-        });
-    }
-</script>
-<script>
-    function sendData(event) {
-        event.preventDefault(); // Stop the form from submitting normally
-
-        // Collect form data
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Send the data using FormSubmit (or another email service)
-        fetch("https://formsubmit.co/poojasarade01@gmail.com", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                phone: phone,
-                email: email,
-                message: message
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("Thank you! Your details have been sent.");
-                document.getElementById('form1').reset();
-            } else {
-                alert("Something went wrong. Please try again later.");
-            }
-        })
-        .catch(error => {
-            alert("Error: " + error.message);
-        });
-    }
-</script>
+    
 <div class="footer-section">
     <img class="qr-code" src="img/qr.png" alt="QR Code">
     
@@ -955,15 +771,10 @@
 <script>
     // Add event listener to the play button
     document.getElementById('tourPlayButton').addEventListener('click', function() {
-        // This will trigger your existing popup
-        // Replace the line below with the code that opens your popup
+    
         console.log('Open your existing popup here');
         
-        // If you have a function to open your popup, call it here
-        // Example: openVirtualTourPopup();
-        
-        // If you're using a modal library like Bootstrap, you might use:
-        // $('#yourExistingPopup').modal('show');
+ 
     });
 </script>
   <script>
@@ -1157,23 +968,7 @@
         }
     });
     
-    // Form submission
-    const form = document.getElementById('enquiry-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Form submitted successfully!');
-        const selectedFloorPlan = window.selectedFloorPlanData;
-        popup.style.display = 'none';
-        if (selectedFloorPlan) {
-        showFloorPlanImage(selectedFloorPlan);
-    }
-    
-    // Reset the form
-    form.reset();
-    
-    // Alert (you might want to replace this with a more user-friendly notification)
-    alert('Form submitted successfully!');
-});
+  
 
 // FLOOR PLAN FUNCTIONALITY
 // Variable to store the clicked floor plan's image source/data
@@ -1245,22 +1040,6 @@ function showFloorPlanImage(floorPlanData) {
 
 </script> 
 
-<script>
-    function openPopup() {
-        document.getElementById("popup-form").style.display = "flex";
-    }
-
-    function closePopup() {
-        document.getElementById("popup-form").style.display = "none";
-    }
-
-    // Optional: prevent form submission for demo
-    document.getElementById("enquiry-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        alert("Form submitted!");
-        closePopup();
-    });
-</script>
 
 </body>
 </html>
